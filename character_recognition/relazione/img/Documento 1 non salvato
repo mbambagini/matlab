@@ -1,0 +1,39 @@
+I=getImage('./dataSet/A1/A1.png', 70, 50, 0);
+I=reshape(I,70,50);
+figure(1);
+imshow(I);
+Idist=imnoise(I,'gaussian',1);
+figure(2);
+imshow(Idist)
+Idist2=imnoise(Idist,'gaussian',1);
+figure(3);
+imshow(Idist2)
+Inoise=imnoise(I,'gaussian',0.3);
+Ibw=im2bw(Inoise, 0.4);
+figure(4);
+imshow(Ibw);
+
+>> A=im2bw(imresize(I,[7,5]),0.4)
+
+A =
+
+     1     1     0     1     1
+     1     1     1     0     1
+     1     0     1     0     1
+     1     0     1     0     1
+     1     0     1     0     1
+     1     1     1     1     0
+     0     1     1     1     0
+
+>> imresize(Ibw,[7,5])
+
+ans =
+
+     1     1     0     1     1
+     1     1     1     0     1
+     1     0     1     0     1
+     1     0     1     0     1
+     1     0     1     0     1
+     1     1     1     1     0
+     0     1     1     1     0
+
